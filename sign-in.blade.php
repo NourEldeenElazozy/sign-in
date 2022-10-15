@@ -5,10 +5,172 @@
        
         @import url('https://fonts.googleapis.com/css?family=Cairo:1,1');
  
+
+        /* dropdown */
+        .topnav {
+  background-color: #daae51;
+  overflow: hidden;
+  
+}
+
+/* Style the links inside the navigation bar */
+
+/* Add an active class to highlight the current page */
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+.header-logo {
+  margin-left: auto;
+}
+/* Dropdown container - needed to position the dropdown content */
+
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+ 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #daae51;
+  color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #daae51;
+  color: rgb(255, 251, 251);
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+             /* dropdown */
  * {
      box-sizing: border-box;
  }
+ *{
+  margin:0;
+  padding:0;
 
+  font-family: 'Cairo', sans-serif;
+  
+}
+.nav {
+  direction: rtl; /* Add direction for menu */
+  display: flex;
+  list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav>li {
+    direction: rtl; 
+  padding: .5em;
+  
+}
+#abc{
+  width:100%;
+  height:100vh;
+  background-image: url(img2.jpg);
+  background-size: cover;
+  
+  
+}
+nav{
+  width: 100%;
+  height: 50px;
+  background-color: #0005;
+  line-height: 50px;
+  
+}
+nav ul{
+  float: right;
+  margin-right: 30px;
+  direction: rtl; 
+  
+}
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  transition: 0.7s all;
+  direction: rtl; 
+
+}
+nav ul li:hover{
+  background-color:#daae51;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 30px;
+  
+}
  body {
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
      display: flex;
@@ -18,6 +180,7 @@
      font-family: 'Cairo', sans-serif;
      height: 100vh;
      margin: -20px 0 50px;
+     
  }
  .placeholder{
     font-family: 'Cairo', sans-serif;
@@ -121,7 +284,7 @@
      border-radius: 10px;
        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
              0 10px 10px rgba(0,0,0,0.22);
-     position: relative;
+     position: sticky;
      overflow: hidden;
      width: 768px;
      max-width: 100%;
@@ -249,14 +412,14 @@
      justify-content: center;
      align-items: center;
      margin: 0 5px;
-     height: 40px;
+     height: 10px;
      width: 40px;
  }
  
  footer {
-     background-color: #222;
+    
      color: #fff;
-     font-size: 14px;
+     font-size: 12px;
      bottom: 0;
      position: fixed;
      left: 0;
@@ -286,10 +449,50 @@
      <!-- breadcrumb -->
  
  
- 
- 
+ <br>
+     <div id="abc">
+        <nav>
+            
+            <ul>
+              
+                <li><a href="#">الرئيسية</a></li>
+                <li>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">انشطة</a>
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">الأنشطة السابقة</a>
+                      <a href="#">الأنشطة القادمة</a>
+             
+                    </div>
+                  </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">احداث</a>
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="#">اقسام الأحداث</a>
+                          <a href="#">ابرز الأحداث</a>
+                 
+                        </div>
+                      </div>
+                    </li>
+                <li><a href="#">من نحن</a></li>
+            
+            </ul>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="img-responsive" src="{{URL::asset('EVENTAT.0.png')}}" style="width: 17%">
+                </a>
+            </div>
+          
+        </nav>
+    </div>
  <div class="container" id="container">
-     <div class="form-container sign-up-container">
+     <div class="form-container sign-up-container"  style="height: 20%">
        
      </div>
      <div class="form-container sign-in-container">
@@ -332,7 +535,14 @@
      </div>
  </div>
  
+ <footer class="footer footer-transparent">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  جميع الحقوق محفوظة لمنصة ايفنتات
  
+  </div>
+  <!-- Copyright -->
+</footer>
  
  @section('js')
      <!--Internal  Chart.bundle js -->
